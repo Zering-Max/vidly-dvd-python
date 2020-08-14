@@ -1,16 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <dl>
+<div class="container d-flex flex-wrap">
+    <div class="w-50 p-3 text-center">
+        <img class="rounded" src="{{ movie.image }}" alt="{{ movie.title }}">
+    </div>
+
+    <dl class=" w-50 p-3">
         <dt>Title</dt>
         <dd>{{ movie.title }}</dd>
         <dt>Genre</dt>
         <dd>{{ movie.genre }}</dd>
         <dt>Stock</dt>
         <dd>{{ movie.number_stock }}</dd>
-        <dt></dt>
-        <dd></dd>
-        <dt></dt>
-        <dd></dd>
+        <dt>Release Year</dt>
+        <dd>{{ movie.release_year}}</dd>
+        <dt>Daily Rate</dt>
+        <dd>{{ movie.daily_rate}}</dd>
     </dl>
+    <p>{{movie.synopsis}}</p>
+    <a class="w-50" href="/movies"> << Retour</a>
+
+</div>
+
 {% endblock %}

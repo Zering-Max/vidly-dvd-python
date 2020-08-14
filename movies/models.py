@@ -11,6 +11,8 @@ class Genre(models.Model):
 
 class Movie(models.Model):
     title = models.CharField(max_length=255)
+    image = models.CharField(max_length=2000, null=True)
+    synopsis = models.CharField(max_length=2000, null=True)
     release_year = models.IntegerField()
     number_stock = models.IntegerField()
     daily_rate = models.FloatField()

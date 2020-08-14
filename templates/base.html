@@ -11,8 +11,9 @@
     <title>Vidly</title>
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">Vidly</a>
+    <nav class="navbar navbar-light bg-light justify-content-start p-3">
+      <a class="navbar-brand mr-5" href="/">Vidly</a>
+      <a href="{% url 'movies_index' %}">Movies</a>
     </nav>
     <main class="container">
       {% block content %}

@@ -26,7 +26,8 @@ SECRET_KEY = '!pwt3wi^v9l_)d&8-&hn+!!k)rvz1w2+1c18&aik_*ixml0brl'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'sheltered-everglades-89693.herokuapp.com'
+    'sheltered-everglades-89693.herokuapp.com',
+    '127.0.0.1'
 ]
 
 

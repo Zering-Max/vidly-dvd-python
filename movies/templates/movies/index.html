@@ -1,29 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<table class="table table-bordered table-hover">
-    <thead>
-    <tr>
-        <th>Title</th>
-        <th>Genre</th>
-        <th>Stock</th>
-        <th>Daily</th>
-    </tr>
-    </thead>
-    <tbody>
-        {% for movie in movies %}
-        <tr>
-            <td>
-                <a href="{% url 'movies_detail' movie.id %}">{{ movie.title }}</a>
+<div class="d-flex p-2 bd-highlight flex-wrap justify-content-between">
+{% for movie in movies %}
+    <div class="card mb-5 rounded" style="width: 30%;">
+      <a href="{% url 'movies_detail' movie.id %}">
+        <img src="{{ movie.image }}" class="card-img-top" alt="{{ movie.title }}">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">{{ movie.title }}</h5>
+        <p class="card-text"></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ movie.genre }}</li>
 
-            </td>
-            <td>{{ movie.genre }}</td>
-            <td>{{ movie.number_stock }}</td>
-            <td>{{ movie.daily_rate }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-    
+      </ul>
+      <div class="card-body">
+        <a href="{% url 'movies_detail' movie.id %}" class="card-link">Details</a>
 
-</table>
+      </div>
+    </div>
+{% endfor %}
+</div>
 {% endblock %}
